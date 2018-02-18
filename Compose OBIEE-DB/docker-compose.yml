@@ -54,13 +54,21 @@ services:
     env_file:
       - ./OracleBIEE/12.2.1.0.0/bi_config_param.env
 
-  # Oracle Database service
+  # Oracle Database 12.1.0.2 service
   oracledb:
     build:
       context: ./OracleDatabase/12.1.0.2
       dockerfile: Dockerfile.ee
     image: database:12.1.0.2
     environment:
+    
+  # Oracle Database 12.2.0.1 service
+  oracledb:
+    build:
+      context: ./OracleDatabase/12.2.0.1
+      dockerfile: Dockerfile.ee
+    image: database:12.2.0.1
+    environment:    
       - ORACLE_PWD=Admin123
     ports:
       - "1521:1521"
