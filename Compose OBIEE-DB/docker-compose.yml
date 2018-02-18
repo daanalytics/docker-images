@@ -61,7 +61,10 @@ services:
       dockerfile: Dockerfile.ee
     image: database:12.1.0.2
     environment:
-    
+          - ORACLE_PWD=Admin123
+    ports:
+      - "1521:1521"
+      
   # Oracle Database 12.2.0.1 service
   oracledb:
     build:
